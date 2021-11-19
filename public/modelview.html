@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<title>การละเล่นพื้นบ้านของไทย</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: sans-serif;
+			overflow: hidden;
+		}
+
+		.scene,
+		canvas {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		#overlay {
+			position: fixed;
+
+			top: 0;
+			left: 0;
+
+			z-index: 2;
+			cursor: pointer;
+		}
+
+		#loverlay {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			z-index: 2;
+			cursor: pointer;
+		}
+
+		#text {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			font-size: 50px;
+			color: white;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+		}
+
+
+		#ctext {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-size: 25px;
+			color: white;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/lowLag.js"></script>
+</head>
+
+<body>
+
+	<audio autoplay loop>
+		<source src="./songs/1.mp3" type="audio/mpeg">
+	</audio>
+
+	<div id="loverlay">
+		<div id="ctext">กำลังโหลด</div>
+	</div>
+
+
+	<div id="overlay" style="margin: 20px;">
+		<button onclick="back()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+			กลับ
+		</button>
+		<div id="vo_a">
+
+		</div>
+	</div>
+
+	<div class="scene"></div>
+	<script src="js/three.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script src="js/GLTFLoader.js"></script>
+	<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
